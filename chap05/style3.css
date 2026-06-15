@@ -1,0 +1,15 @@
+/* style3.css */
+/* 속성 선택자 "<a href" 속성=값 */
+input[type="email"] {
+    border: 2px solid #1a73e8;
+    border-radius: 14px;
+}
+
+/* href 속성이 "https://" 시작하는 a element */
+a[href^="https://"] {
+    color: red;
+}
+
+a[href^="https://"]::after {
+    content:" ->"
+}

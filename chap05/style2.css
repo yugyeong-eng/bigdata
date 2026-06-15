@@ -1,0 +1,22 @@
+/* style2.css */
+/* 자손 결합자(공백) : .card 안의 모든 p(깊이 무관) 선택 */
+section p {     /* 공백일 때는 자손이고 꺾쇠(>)일 때는 자식 */
+    color: #f20606;
+    margin: 8px 0;
+}
+
+/* 자식 결합자(>) : .card의 직접 자식인 p */
+.card > p {
+    font-weight: bold;
+}
+
+/* 인접 형제 결합자(+) : h3 바로 다음에 오는 p 하나 */
+h3 + p {
+    color: brown;
+}
+
+/* 그룹 선택자(,) : 여러 선택자에 같은 스타일 적용 */
+nav a, .card > h3 {
+    text-decoration: none;
+    color: #1dee16;
+}

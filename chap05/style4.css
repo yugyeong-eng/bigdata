@@ -1,0 +1,20 @@
+/* style4.css */
+/* 기본 box-sizing: content-box(브라우저 기본값) */
+.box {
+    width: 200px;
+    height: 80px;  
+    border: 4px solid #f00;   /* solid 실선, dotted 점선 */
+    padding: 20px;
+    margin: 30px;
+    background-color: #e3f2fd;
+}
+
+.box-border-box {
+    box-sizing: border-box;
+    width: 200px;
+    height: 80px;
+    border: 4px solid #f00;
+    padding: 20px;
+    margin: 30px;
+    background-color: #e3f2fd;
+}

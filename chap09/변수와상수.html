@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수와 상수</title>
+</head>
+<body>
+    <h1>변수와 상수</h1>
+    <script>
+        // const : 재할당 불가
+        const siteName='나의블로그';
+        console.log(siteName)
+        // siteName="다른블로그" 에러 발생
+        // let : 재할당 가능
+        let score=80;
+        console.log('초기 점수 : ', score)
+        score=95;
+        console.log('수정 점수 : ', score)
+        // 블록 스코드 확인
+        {
+            const blockVar = '블록 안에서만 유효'
+            console.log(blockVar)
+        }
+        // console.log(blockVar) 에러
+        // var 선언 변수의 문제점
+        if(true) { // if (조건식) {}
+            var leaky = 'var는 블록을 탈출한다.'
+        }
+        console.log(leaky) // 실행은 되지만 문제가 많다. 이름 중복, 메모리 누수 발생
+    </script>
+</body>
+</html>
