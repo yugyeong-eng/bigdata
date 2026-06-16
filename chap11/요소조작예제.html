@@ -34,7 +34,15 @@
         document.querySelector('#btn-complete').addEventListener('click', () => {
             // 클릭했을 때 무엇을 할지 지정, 첫 번째 할 일 완료
             firstTask.classList.add('complete');
-        })
+            firstTask.textContent='장보기 (완료)' // 콜백 함수
+        });
+        document.querySelector('#btn-highlight').addEventListener('click', () => {
+            heading.classList.toggle('highlight');
+        });
+        // 모든 li 요소를 순회합니다
+        allTasks.forEach((task, index) => {
+            console.log(`${index +1} 번 작업 : ${task.textContent}`)
+        });
     </script>
 </body>
 </html>
