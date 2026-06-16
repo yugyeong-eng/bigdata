@@ -57,6 +57,9 @@
             li.append(titleSpan, deleteBtn);
 
             // booklist.append(li); X
+            // 위 코드가 안 되는 이유는 한 번에 올리는 것이 아닌 여러 번을 걸쳐서 올려
+            // 화면이 흔들릴 수 있는 위험 요소가 있기 때문에 아래 코드처럼
+            // (fragment) 사용을 권장한다.
             fragment.append(li);
         });
         booklist.append(fragment);
