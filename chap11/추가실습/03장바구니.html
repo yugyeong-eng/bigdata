@@ -88,6 +88,8 @@
         
         if(action === "plus"){ // 수량을 1 증가
             cart = cart.map((i) => i.id === id ? {...i, qty:i.qty+1}:i)
+            // ...i 의 역할은 아래 주석 걸은 id 를 가져오는 것이 아니라 복사해서 가져오는 것
+            // {id:1, name:"기계식 키보드", price:89000, qty:1}
         }else if(action === "minus"){
             cart = cart
             .map((i) => i.id === id ? {...i, qty:i.qty-1}:i)   // 3개 li 있는 배열 반환
