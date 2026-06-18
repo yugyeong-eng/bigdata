@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise 기초</title>
+</head>
+<body>
+    <script>
+        // 1. Promise 객체만 생성(아직 실행 아니다) : 2초 뒤 성공 또는 실패
+        const fetchData = new Promise((resolve, reject) => { // new 가 객체를 생성하라는 명령
+            setTimeout(() => {
+                const success = false; // 기본 true, 실패시 False 변경
+                if(success){ // 회원정보 추출 성공했을 때
+                    resolve({id:1, name:"홍길동"}); // 회원 정보 데이터 성공시 호출될 함수
+                }else{
+                    reject(new Error("회원 데이터 로드 실패"));
+                }
+            }, 2000);
+        });
+
+        // 진짜 실행 fetchData 실행
+        fetchData // then 은 성공이라는 조건이라는 의미 // (data)에 resolve({id:1, name:"홍길동"}) << 얘가 호출됨
+            .then((data) => { // data.name에 호출된 코드에 홍길동을 찍음
+                console.log('성공 : ', data.name);
+                return data.id; // 프로미스 오브젝트가 또 생겨서 data.id가 들어가게 됨 // 그래서 성공시 호출되는 애가 data.id가 됨
+            })
+            .then((id) => {
+                console.log('ID 확인 : ', id);
+            })
+            .catch((error) => { // (error)에 reject(new Error("회원 데이터 로드 실패")) << 호출됨
+                console.log('오류 : ', error.message);
+            })
+            .finally(() => { // 항상 실행될 놈을 기재
+                console.log('항상 실행됨');
+            });
+        console.log('Promise 상태 확인(pending) : ', fetchData);
+    </script>
+</body>
+</html>
