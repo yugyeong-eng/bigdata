@@ -83,7 +83,7 @@
             const email = document.createElement('p');
             email.textContent=user.email;
             const company = document.createElement('p');
-            company.textContent=user.company;
+            company.textContent=user.company.name;
 
             card.append(name, email, company);
             return card;
