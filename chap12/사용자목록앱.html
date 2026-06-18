@@ -72,6 +72,8 @@
             statusEl.className='hidden';
         }
 
+        const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
         // 연락처 카드 DOM 생성 함수
         function createUserCard(user){ // user : 한 명의 연락처 정보 데이터
             // card box : div
@@ -98,6 +100,7 @@
                 if(!response.ok){
                     throw new Error(`서버 에러 (${response.status})`); // message : `서버 에러 (${response.status})`
                 }
+                await delay(4500);
                 // 여기가 실행된다는 뜻은 데이터가 정상적으로 왔다는 의미
                 const users = await response.json(); // 파싱
                 const fragment = document.createDocumentFragment();
